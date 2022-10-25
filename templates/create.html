@@ -11,24 +11,26 @@
     <div class="container">
         <h1>Add a New User</h1>
         <!-- This action="/home/show is the route being sent in 'POST' form to server.py - will be picked up by a route listener there" -->
-        <form action="/home/show" method="POST"> 
+        <form action="/process" method="POST"> 
             <div>
                 <!-- all these for="" values should all line up with database column names -->
                 <label for="first_name">First Name:</label> 
                 <br>
-                <input type="text" name="first_name" placeholder="first_name">
+                <input type="text" name="first_name" placeholder="First Name">
             </div>
             <div>
                 <label for="last_name">Last Name:</label>
                 <br>
-                <input type="text" name="last_name" placeholder="last_name">
+                <input type="text" name="last_name" placeholder="Last Name">
             </div>
             <div>
                 <label for="email">Email:</label>
                 <br>
-                <input type="email" name="email" placeholder="email">
+                <input type="email" name="email" placeholder="Email">
             </div>
-            <input type="submit" value="create">
+            <input type="submit" value="create user">
+            <a href="/home" class="btn bg-primary">Go Home</a>
+            <input type="hidden" name="handle_type" value="create">
         </form>
     </div>
 </body>

@@ -17,6 +17,7 @@
                     <td>Full Name</td>
                     <td>Email</td>
                     <td>Created At</td>
+                    <td>Actions</td>
                 </tr>
             </th>
             <tbody>
@@ -27,12 +28,15 @@
                     <td>{{ user.first_name}} {{ user.last_name}}</td>
                     <td>{{ user.email }}</td>
                     <td>{{ user.created_at }}</td>
+                    <td>
+                        <a href="/user/{{ user.id }}"">Show</a> | <a href="/edit/{{ user.id }}">Edit</a> | <a href="/user/delete/{{ user.id }}">Delete</a>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
         <!-- redirects to the listener in server.py, that listener route returns a render template for the create.html page -->
-        <a href="/home/create"> Add a new User</a>
+        <a href="/create"> Add a new User</a>
     </div>
 </body>
 </html>
