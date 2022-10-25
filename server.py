@@ -33,13 +33,14 @@ def r_show():
         User.save(data)
         return redirect('/home')
     elif request.form['handle_type'] == 'edit':
+        # line below appends 'user_id' key into data variable and assings the session value of user_id to it. 
         data['user_id'] = session['user_id']
         User.update_user(data)
         return redirect(url_for('r_user_show', id = int(session['user_id'])))
 
 @app.route('/user/<int:id>')
 def r_user_show(id):
-    user_id = id
+    user_id = id # this is assiging the value of id into a variable called user_id
     session['user_id'] = user_id
     data = {
         'user_id': user_id
