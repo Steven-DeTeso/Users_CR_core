@@ -1,4 +1,4 @@
-from mysqlconnection import connectToMySQL 
+from flask_app.config.mysqlconnection import connectToMySQL 
 # IMPORTING FROM mysqlconnection file, IMPORTING class name 'connectToMySQL'
 
 class User:
